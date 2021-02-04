@@ -9,18 +9,20 @@ disqus_shortname: lanleft-github-io
 # Owner/author information
 owner:
   name:           Lan Vu
-  avatar:         nope
+  avatar:         /images/feature/image1.jpg
   bio:            nope
-  email:          nope
+  email:          lan.vt183781@sis.hust.edu.vn
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter: 
   github: lanleft
-  facebook: lanleft
+  facebook: lanleft2k
 # Links to include in top navigation
 # For external links add external: true
 links:
   - title: Blog
     url: /blog/
+  - title: Project
+    url: /project/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    vietnam

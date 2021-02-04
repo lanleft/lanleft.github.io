@@ -3,8 +3,6 @@ layout: home
 title: lanleft
 description: lanleft's blog
 tags: [Jekyll, theme, responsive, blog, template]
-image:
-  feature: /images/feature/image1.jpg
 ---
 
 <head>
