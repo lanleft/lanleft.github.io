@@ -1,9 +1,16 @@
 ---
 layout: post-index
 permalink: /aboutme/
-title: About Me
+title: Lan Vu
 tags: [aboutme]
 comments: false
 ---
 
-## Nope
+Third year student of Hanoi University of Science and Technology
+
+CTF player
+
+Hobbies: ping-pong, anime and playing with cat.
+
+
+

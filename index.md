@@ -1,6 +1,6 @@
 ---
 layout: home
-title: lanleft
+title: home
 description: lanleft's blog
 tags: [Jekyll, theme, responsive, blog, template]
 ---
