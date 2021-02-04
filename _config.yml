@@ -9,7 +9,7 @@ disqus_shortname: lanleft-github-io
 # Owner/author information
 owner:
   name:           Lan Vu
-  avatar:         images/feature/image1.jpg
+  avatar:         /feature/image1.jpg
   bio:            nope
   email:          lan.vt183781@sis.hust.edu.vn
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
