@@ -6,11 +6,13 @@ tags: [aboutme]
 comments: false
 ---
 
+My name is Lan Vu, aka lanleft
+
 Third year student of Hanoi University of Science and Technology
 
 CTF player
 
-Hobbies: ping-pong, anime and cat.
+Hobbies: ping-pong, anime and cat
 
 
 
