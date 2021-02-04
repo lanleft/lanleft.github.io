@@ -11,5 +11,4 @@ tags: [Jekyll, theme, responsive, blog, template]
     </style>
 </head>
 
-## test test test
 
