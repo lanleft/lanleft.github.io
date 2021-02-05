@@ -20,12 +20,12 @@ task :new_post, :title do |t, args|
     title = args.title
   else
     title = get_stdin("Enter a title for your post: ")
+    category = get_stdin("Enter category name to group your post in (leave blank for none): ")
   end
-  filename = "#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
+  filename = "#{posts_dir}/#{category}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  category = get_stdin("Enter category name to group your post in (leave blank for none): ")
   tags = get_stdin("Enter tags to classify your post (comma separated): ")
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
