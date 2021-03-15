@@ -8,7 +8,7 @@ comments: false
 
 My name is Lan Vu, aka lanleft
 
-3nd year CE student at Hanoi University Science and Technology
+Third-year Computer Engineering student at Hanoi University Science and Technology
 
 CTF player
 
