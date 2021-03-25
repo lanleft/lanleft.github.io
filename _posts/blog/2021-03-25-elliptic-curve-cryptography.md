@@ -35,7 +35,7 @@ $$
 \\4a^3 + 27b^2 \ne 0.
 $$
 
-This is required to exclude [singular curves](https://en.wikipedia.org/wiki/Singularity_(mathematics)).\
+This is required to exclude [singular curves](https://en.wikipedia.org/wiki/Singularity_(mathematics)).
 
 
 Example: [link](https://www.desmos.com/calculator)
@@ -52,7 +52,7 @@ For an elliptic curve, I have  a set of points that belong to the curve denoted 
 
 #### **Algebraic addition**
 
-##### P and Q
+#### P and Q
 
 If I want to add a point *P* to another point *Q*, I take the following steps:
 
@@ -133,7 +133,7 @@ $$
 
 
 
-##### P and P 
+#### P and P 
 
 ECC is based on adding a point to ifself *k* times in order to obtain another point
 
@@ -153,18 +153,24 @@ $$
 
 ![image03](/images/1_blog_ecc/image03.png)
 
+
+
 Point doubling can also be easily expressed algebraically. Similarly to point addition, I calculate the slope. I obtain the slope of a single point *P* at *(x, y)* by:
 
 
 $$
 2y\frac{dy}{dx} = 3x^2 + a
 $$
+
+
 and expressing the slope as:
 
 
 $$
 \alpha^2 = \frac{3x_P^2 + a}{2y_P}
 $$
+
+
 Similar to the above, I have the result:
 
 
@@ -203,6 +209,8 @@ For example, I want to calculate *3P*. The multiplication can be represented as 
 $$
 3P = P + P + P 
 $$
+
+
 To calculate *3P*, I divide it by 2 steps. 
 
 1. Addition two point the similarities:
@@ -218,6 +226,8 @@ $$
 $$
 2P + P
 $$
+
+
 Using point addition technique described in *Algebraic addition* to obtain result.
 
 Scalar multiplication algorithm is implemented on python like this code:
