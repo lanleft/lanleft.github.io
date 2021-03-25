@@ -213,14 +213,14 @@ $$
 
 To calculate *3P*, I divide it by 2 steps. 
 
-1. Addition two point the similarities:
+- Addition two point the similarities:
 
 
 $$
 P + P
 $$
 
-2. Addition two point are different:
+- Addition two point are different:
 
 
 $$
