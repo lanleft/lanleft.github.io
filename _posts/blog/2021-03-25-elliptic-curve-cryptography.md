@@ -50,9 +50,9 @@ $$
 
 For an elliptic curve, I have  a set of points that belong to the curve denoted by a set *E(a, b)* along with a special point at infinity, denoted by *O*.  *E(a, b)* is a abelian group under a special addtion operator, denoted by *+*
 
-#### **Algebraic addition**
+### **Algebraic addition**
 
-#### P and Q
+### *P and Q*
 
 If I want to add a point *P* to another point *Q*, I take the following steps:
 
@@ -133,7 +133,7 @@ $$
 
 
 
-#### P and P 
+### *P and P*
 
 ECC is based on adding a point to ifself *k* times in order to obtain another point
 
@@ -199,7 +199,7 @@ def point_addition(P, Q):
     return Point(Rx, Ry)
 ```
 
-#### Scalar Multiplication
+### **Scalar Multiplication**
 
 Scalar multiplication can represented as repeated point addition. 
 
