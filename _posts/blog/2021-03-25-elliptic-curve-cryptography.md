@@ -16,7 +16,7 @@ Today, *Elliptic Curve Cryptography* (**ECC**) appears in [TSL](https://tools.ie
 
 ## **The Goal**
 
-In this post, I explain how I apply ECC algorithm on secure transmission channel from echo server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server.\
+In this post, I explain how I apply ECC algorithm on secure transmission channel from echo server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server
 
 In addition,  use of  *Elliptic Curve Digital Signature Algorithm* (**ECDSA**) as a authentication mechanism.
 
@@ -48,11 +48,11 @@ $$
 
 ### **Group operator on ECC**
 
-
-
-For an elliptic curve, I have  a set of points that belong to the curve denoted by a set *E(a, b)* along with a special point at infinity, denoted by *O*.  *E(a, b)* is a abelian group under a special addtion operator, denoted by *+*.\
+For an elliptic curve, I have  a set of points that belong to the curve denoted by a set *E(a, b)* along with a special point at infinity, denoted by *O*.  *E(a, b)* is a abelian group under a special addtion operator, denoted by *+*
 
 #### **Algebraic addition**
+
+##### P and Q
 
 If I want to add a point *P* to another point *Q*, I take the following steps:
 
@@ -65,12 +65,13 @@ $$
 y^2 = x^3 - 5x + 9
 $$
 
+
+
 ![image02](/images/1_blog_ecc/image02.png)
 
 
 
 The straight line passing through points *P* and *Q* is
-
 $$
 \\ y = \alpha x + \beta
 $$
@@ -130,21 +131,128 @@ $$
 \\y_{P+Q} = -\alpha (x_{P+Q} - x_P) - y_P
 $$
 
-#### **Scalar Multiplication**
 
 
+##### P and P 
+
+ECC is based on adding a point to ifself *k* times in order to obtain another point
+
+*k x P*.  Adding point to ifself is called point doubling and expressed as *P + P = 2P*
+
+I can compute *2P* using the following steps:
+
+1. Draw a tangent line at *P*
+2. Find the intersection of the tangent line with the elliptic curve to obtain point *R*
+3. Reflect the point of intersection along the *x*-axis
 
 
+$$
+y^2 = x^3 - 5x + 9
+$$
 
-### **Generate keys with ECDH**
+
+![image03](/images/1_blog_ecc/image03.png)
+
+Point doubling can also be easily expressed algebraically. Similarly to point addition, I calculate the slope. I obtain the slope of a single point *P* at *(x, y)* by:
 
 
+$$
+2y\frac{dy}{dx} = 3x^2 + a
+$$
+and expressing the slope as:
 
 
+$$
+\alpha^2 = \frac{3x_P^2 + a}{2y_P}
+$$
+Similar to the above, I have the result:
+
+
+$$
+x_{2P} = \alpha ^2 - 2x_P
+$$
+
+$$
+y_{2P} = -\alpha (x_{2P} - x_P) - y_P
+$$
+
+
+After that, I illustrate the *Point addition* algorithm on python as follows:
+
+```python
+from collections import namedtuple
+Point = namedtuple("Point", "x y")
+
+def point_addition(P, Q):    
+    if P != Q:
+        lamda = (Q.y - P.y)*inverse_mod(Q.x - P.x, p)
+    else:
+        lamda = (3* P.x^2 + A)*inverse_mod(2*P.y, p)
+    Rx = (lamda^2 - Q.x - P.x) % p
+    Ry = (lamda*(P.x - Rx)- P.y) % p
+    return Point(Rx, Ry)
+```
+
+#### Scalar Multiplication
+
+Scalar multiplication can represented as repeated point addition. 
+
+For example, I want to calculate *3P*. The multiplication can be represented as a series of addition:
+
+
+$$
+3P = P + P + P 
+$$
+To calculate *3P*, I divide it by 2 steps. 
+
+1. Addition two point the similarities:
+
+
+$$
+P + P
+$$
+
+2. Addition two point are different:
+
+
+$$
+2P + P
+$$
+Using point addition technique described in *Algebraic addition* to obtain result.
+
+Scalar multiplication algorithm is implemented on python like this code:
+
+```python
+from collections import namedtuple
+Point = namedtuple("Point", "x y")
+
+def scalar_multiplication(Q, n):
+    R = Point(0, 0)
+    while n > 0:
+        if n % 2 == 1: 
+            R = point_addition(R, Q)
+        Q = point_addition(Q, Q)
+        n = n // 2
+    return R
+```
+
+### **Generate keys with Elliptic Curve Diffie-Hellman**
+
+Elliptic Curve Diffie-Hellman (*ECDH*) secret key exchange scheme can be used for establishing a shared secret key between two parties. 
+
+Alice and Bob want to create a secure communication channel. They choose ECC parameters *p, a, b* for an Elliptic Curve and base point *G*
+
+After that, following like this image:
+
+![image04](/images/1_blog_ecc/image04.png)
 
 ### **Encryption with AES_ECB**
 
+After obtain the key by ECDH,I used it to encrypt the data exchanged on the communication channel.
 
+I use AES algorithm, mod ECB. 
+
+You can learn more about this algorithm [here](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
 
 
