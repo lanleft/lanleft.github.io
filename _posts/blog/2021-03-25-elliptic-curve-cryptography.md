@@ -256,11 +256,11 @@ After that, following like this image:
 
 ![image04](/images/1_blog_ecc/image04.png)
 
-### **Encryption with AES_ECB**
+### **Encryption with AES**
 
 After obtain the key by ECDH,I used it to encrypt the data exchanged on the communication channel.
 
-I use AES algorithm, mod ECB. 
+I use AES algorithm, mode ECB. 
 
 You can learn more about this algorithm [here](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
