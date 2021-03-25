@@ -22,7 +22,7 @@ In this post, I explain how I apply ECC algorithm on secure transmission channel
 
 In addition,  use of  *Elliptic Curve Digital Signature Algorithm* (**ECDSA**) as a authentication mechanism.
 
-## **ECC Over Finite Fields *GF(p)* **
+## **ECC Over Finite Fields GF(p) **
 
 
 
@@ -33,15 +33,13 @@ y^2 = x^3 + ax + b\, (\,mod \,\, p)
 $$
 
 
-satisfied:
+satisfied
 $$
-4a^3 + 27b^2 \ne 0
+4a^3 + 27b^2 \ne 0.
 $$
 This is required to exclude [singular curves](https://en.wikipedia.org/wiki/Singularity_(mathematics)).
 
-
-
-Example:
+Example: https://www.desmos.com/calculator
 
 ![image01](/images/1_blog_ecc/image01.png)
 
