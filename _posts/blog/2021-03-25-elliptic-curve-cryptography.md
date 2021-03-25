@@ -16,7 +16,7 @@ Today, *Elliptic Curve Cryptography* (**ECC**) appears in [TSL](https://tools.ie
 
 ## **The Goal**
 
-In this post, I explain how I apply ECC algorithm on secure transmission channel from echo server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server
+In this post, I explain how I apply ECC algorithm on secure transmission channel from echo server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server.
 
 In addition,  use of  *Elliptic Curve Digital Signature Algorithm* (**ECDSA**) as a authentication mechanism.
 
@@ -213,14 +213,14 @@ $$
 
 To calculate *3P*, I divide it by 2 steps. 
 
-1. Addition two point the similarities:
+- Addition two point the similarities:
 
 
 $$
 P + P
 $$
 
-2. Addition two point are different:
+- Addition two point are different:
 
 
 $$
@@ -256,11 +256,11 @@ After that, following like this image:
 
 ![image04](/images/1_blog_ecc/image04.png)
 
-### **Encryption with AES_ECB**
+### **Encryption with AES**
 
 After obtain the key by ECDH,I used it to encrypt the data exchanged on the communication channel.
 
-I use AES algorithm, mod ECB. 
+I use AES algorithm, mode ECB. 
 
 You can learn more about this algorithm [here](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
