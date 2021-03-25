@@ -18,13 +18,9 @@ Today, *Elliptic Curve Cryptography* (**ECC**) appears in [TSL](https://tools.ie
 
 In this post, I explain how I apply ECC algorithm on secure transmission channel from echo server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server. 
 
-
-
 In addition,  use of  *Elliptic Curve Digital Signature Algorithm* (**ECDSA**) as a authentication mechanism.
 
 ### **ECC Over Finite Fields GF(p)**
-
-
 
 In mathematics, elliptic curve is described in detail [here](https://mathworld.wolfram.com/EllipticCurve.html). But in cryptography, an elliptic curve have the form known as:
 
@@ -41,6 +37,7 @@ $$
 
 This is required to exclude [singular curves](https://en.wikipedia.org/wiki/Singularity_(mathematics)).
 
+
 Example: [link](https://www.desmos.com/calculator)
 
 $$
@@ -54,6 +51,7 @@ $$
 
 
 For an elliptic curve, I have  a set of points that belong to the curve denoted by a set *E(a, b)* along with a special point at infinity, denoted by *O*.  *E(a, b)* is a abelian group under a special addtion operator, denoted by *+*.
+
 
 **Algebraic addition**
 
@@ -78,7 +76,6 @@ $$
 \\ y = \alpha x + \beta
 $$
 
-
 with
 
 $$
@@ -91,7 +88,6 @@ In this image, there are three intersection points between the straight line and
 $$
 \\(\alpha x + \beta)^2 = x^3 + ax + b
 $$
-
 
 Two of these roots are *x*-coordinates of points *P* and *Q*, the third root (of point R) can be found using property of a monic polynomial.
 
