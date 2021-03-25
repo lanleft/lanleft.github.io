@@ -35,13 +35,13 @@ $$
 
 satisfied
 $$
-4a^3 + 27b^2 \ne 0.
+\\4a^3 + 27b^2 \ne 0.
 $$
 This is required to exclude [singular curves](https://en.wikipedia.org/wiki/Singularity_(mathematics)).
 
 Example: [link](https://www.desmos.com/calculator)
 $$
-y^2 = x^3 - x + 4
+\\ y^2 = x^3 - x + 4
 $$
 ![image01](/images/1_blog_ecc/image01.png)
 
@@ -50,8 +50,6 @@ $$
 
 
 For an elliptic curve, I have  a set of points that belong to the curve denoted by a set *E(a, b)* along with a special point at infinity, denoted by *O*.  *E(a, b)* is a abelian group under a special addtion operator, denoted by *+*.
-
-
 
 **Algebraic addition**
 
@@ -70,59 +68,59 @@ $$
 
 
 
-The straight line passing through points *P* and *Q* is:
+The straight line passing through points *P* and *Q* is
 $$
-y = \alpha x + \beta 
+\\ y = \alpha x + \beta
 $$
 
 
 with
 $$
-\alpha = \frac{y_Q - y_P}{x_Q - x_P}
+\\ \alpha = \frac{y_Q - y_P}{x_Q - x_P}
 $$
 
 
-In this image, there are three intersection points between the straight line and the elliptic curve, satisfied equation under:
+In this image, there are three intersection points between the straight line and the elliptic curve, satisfied equation under
 $$
-(\alpha x + \beta)^2 = x^3 + ax + b
+\\(\alpha x + \beta)^2 = x^3 + ax + b
 $$
 
 
 Two of these roots are *x*-coordinates of points *P* and *Q*, the third root (of point R) can be found using property of a monic polynomial.
 $$
-x^3 - \alpha ^ 2 x^2 + (a - 2 \alpha \beta)x + (b - \beta ^ 2) = 0
+\\x^3 - \alpha ^ 2 x^2 + (a - 2 \alpha \beta)x + (b - \beta ^ 2) = 0
 $$
 
 
-By the [Viet theorem](https://www.emathhelp.net/notes/algebra-1/quadratic-equations/viet-theorem/):
+By the [Viet theorem](https://www.emathhelp.net/notes/algebra-1/quadratic-equations/viet-theorem/)
 $$
-x_P + x_Q + x_R = \alpha ^ 2
+\\x_P + x_Q + x_R = \alpha ^ 2
 $$
- 
 
-from which I can find the third root:
+
+from which I can find the third root
 $$
-x_R = \alpha ^ 2 - x_P - x_Q
+\\x_R = \alpha ^ 2 - x_P - x_Q
 $$
 
 
 In addition, *R* is a straight line passing through *P* and *Q*. So, I can express *y*-coordinate of point *R* as:
 $$
-y_R = \alpha x + \beta
+\\y_R = \alpha x + \beta
 $$
 
 $$
-y_R = \alpha x_R + (y_P - \alpha x_P) = \alpha (x_R - x_P) + y_P
+\\y_R = \alpha x_R + (y_P - \alpha x_P) = \alpha (x_R - x_P) + y_P
 $$
 
 
-Result of  addition of two points is the reflection of point *R* along *x*-axis.
+Result of  addition of two points is the reflection of point *R* along *x*-axis
 $$
-x_{P+Q} = \alpha ^2 - x_P - x_Q
+\\x_{P+Q} = \alpha ^2 - x_P - x_Q
 $$
 
 $$
-y_{P+Q} = -\alpha (x_{P+Q} - x_P) - y_P
+\\y_{P+Q} = -\alpha (x_{P+Q} - x_P) - y_P
 $$
 
 
