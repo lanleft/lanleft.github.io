@@ -16,10 +16,7 @@ Today, *Elliptic Curve Cryptography* (**ECC**) appears in [TSL](https://tools.ie
 
 ## **The Goal**
 
-In this post, I explain how I apply ECC algorithm on secure transmission channel from echo server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server.
-
-
-
+In this post, I explain how I apply ECC algorithm on secure transmission channel from echo server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server.\
 
 In addition,  use of  *Elliptic Curve Digital Signature Algorithm* (**ECDSA**) as a authentication mechanism.
 
@@ -38,7 +35,7 @@ $$
 \\4a^3 + 27b^2 \ne 0.
 $$
 
-This is required to exclude [singular curves](https://en.wikipedia.org/wiki/Singularity_(mathematics)).
+This is required to exclude [singular curves](https://en.wikipedia.org/wiki/Singularity_(mathematics)).\
 
 
 Example: [link](https://www.desmos.com/calculator)
@@ -53,11 +50,9 @@ $$
 
 
 
-For an elliptic curve, I have  a set of points that belong to the curve denoted by a set *E(a, b)* along with a special point at infinity, denoted by *O*.  *E(a, b)* is a abelian group under a special addtion operator, denoted by *+*
+For an elliptic curve, I have  a set of points that belong to the curve denoted by a set *E(a, b)* along with a special point at infinity, denoted by *O*.  *E(a, b)* is a abelian group under a special addtion operator, denoted by *+*.\
 
-
-
-**Algebraic addition**
+#### **Algebraic addition**
 
 If I want to add a point *P* to another point *Q*, I take the following steps:
 
@@ -135,8 +130,11 @@ $$
 \\y_{P+Q} = -\alpha (x_{P+Q} - x_P) - y_P
 $$
 
+#### **Scalar Multiplication**
 
-**Scalar Multiplication**
+
+
+
 
 ### **Generate keys with ECDH**
 
