@@ -34,15 +34,19 @@ $$
 
 
 satisfied
+
 $$
 \\4a^3 + 27b^2 \ne 0.
 $$
+
 This is required to exclude [singular curves](https://en.wikipedia.org/wiki/Singularity_(mathematics)).
 
 Example: [link](https://www.desmos.com/calculator)
+
 $$
 \\ y^2 = x^3 - x + 4
 $$
+
 ![image01](/images/1_blog_ecc/image01.png)
 
 ### **Group operator on ECC**
@@ -69,42 +73,49 @@ $$
 
 
 The straight line passing through points *P* and *Q* is
+
 $$
 \\ y = \alpha x + \beta
 $$
 
 
 with
+
 $$
 \\ \alpha = \frac{y_Q - y_P}{x_Q - x_P}
 $$
 
 
 In this image, there are three intersection points between the straight line and the elliptic curve, satisfied equation under
+
 $$
 \\(\alpha x + \beta)^2 = x^3 + ax + b
 $$
 
 
 Two of these roots are *x*-coordinates of points *P* and *Q*, the third root (of point R) can be found using property of a monic polynomial.
+
 $$
 \\x^3 - \alpha ^ 2 x^2 + (a - 2 \alpha \beta)x + (b - \beta ^ 2) = 0
 $$
 
 
 By the [Viet theorem](https://www.emathhelp.net/notes/algebra-1/quadratic-equations/viet-theorem/)
+
 $$
 \\x_P + x_Q + x_R = \alpha ^ 2
 $$
 
 
 from which I can find the third root
+
 $$
 \\x_R = \alpha ^ 2 - x_P - x_Q
 $$
 
 
 In addition, *R* is a straight line passing through *P* and *Q*. So, I can express *y*-coordinate of point *R* as:
+
 $$
 \\y_R = \alpha x + \beta
 $$
@@ -115,6 +126,7 @@ $$
 
 
 Result of  addition of two points is the reflection of point *R* along *x*-axis
+
 $$
 \\x_{P+Q} = \alpha ^2 - x_P - x_Q
 $$
