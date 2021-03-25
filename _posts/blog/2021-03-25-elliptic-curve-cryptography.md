@@ -264,18 +264,6 @@ I use AES algorithm, mode ECB.
 
 You can learn more about this algorithm [here](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
-#### Demo ECDH and AES
-
-All code is [here](https://github.com/lanleft/Project-II)
-
-###### Server
-
-![image05](/images/1_blog_ecc/image05.png)
-
-###### Client
-
-![image06](/images/1_blog_ecc/image06.png)
-
 ### **Signing with ECDSA**
 
 
