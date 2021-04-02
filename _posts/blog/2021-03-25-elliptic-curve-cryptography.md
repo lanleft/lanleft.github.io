@@ -254,7 +254,7 @@ Alice and Bob want to create a secure communication channel. They choose ECC par
 
 After that, following like this image:
 
-![image04](/images/1_blog_ecc/image04.png)
+![image08](/images/1_blog_ecc/image08.png)
 
 ### **Encryption with AES**
 
