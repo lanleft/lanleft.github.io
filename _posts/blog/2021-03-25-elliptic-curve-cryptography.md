@@ -16,7 +16,7 @@ Today, *Elliptic Curve Cryptography* (**ECC**) appears in [TSL](https://tools.ie
 
 ## **The Goal**
 
-In this post, I explain how I apply ECC algorithm on secure transmission channel from echo server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server.
+In this post, I explain how I apply ECC algorithm on secure transmission channel from server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server.
 
 In addition,  use of  *Elliptic Curve Digital Signature Algorithm* (**ECDSA**) as a authentication mechanism.
 
@@ -246,9 +246,15 @@ def scalar_multiplication(Q, n):
     return R
 ```
 
-### **Generate keys with Elliptic Curve Diffie-Hellman**
+### **Elliptic-Curve Diffie-Hellman**
 
-Elliptic Curve Diffie-Hellman (*ECDH*) secret key exchange scheme can be used for establishing a shared secret key between two parties. 
+As described on [wikipeida](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) Elliptic-Curve Diffie-Hellman (ECDH) is a key agreement protocol that allows **two parties**, each having an **elliptic-curve** public-private key pair, to establish a shared **secret** over an **insecure channel**. This shared secret may be directly used as a key, or to derive another key. The key, or the derived key, can then be used to encrypt subsequent communications using **symmetric-key cipher**. It is a variant of the **Diffie-Hellman protocol** using **elliptic-curve cryptography**.
+
+ECDH is very similar to the classical Diffie-Hellman Key Exchange (DHKE) algorithm, but it uses ECC point multiplication instead of modular exponentiations.  ECDH is based on the following property of EC point:
+$$
+(a * G) * b = (b* G) * a
+$$
+
 
 Alice and Bob want to create a secure communication channel. They choose ECC parameters *p, a, b* for an Elliptic Curve and base point *G*
 
@@ -256,17 +262,31 @@ After that, following like this image:
 
 ![image08](/images/1_blog_ecc/image08.png)
 
-### **Encryption with AES**
+### **Advanced Encryption Standard**
 
-After obtain the key by ECDH,I used it to encrypt the data exchanged on the communication channel.
+You can find the definition of AES on the [wikipedia](https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard) or anywhere on google because it's so common.
 
-I use AES algorithm, mode ECB. 
+"The algorithm was designed by two Belgian cryptographers: Joan Daemen and Vincent Rijmen. The algorithm was named "Rijdael" during the AES design competition.
 
-You can learn more about this algorithm [here](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
+Although the two names **AES** and **Rijdael** are often referred to interchangeably, in fact the two algorithms are not exactly the same. AES only works with **128/192/256bits** data blocks while Rijdael can work with data and keys of any length that is **multiple of 32bits**"
+
+Unlike DES, AES rounds are a variable that depends on the size of the key. Plaintext is divided into blocks of size 16bytes.
+
+Description by [link](https://www.tutorialspoint.com/cryptography/advanced_encryption_standard.htm)
+
+![image1](https://www.tutorialspoint.com/cryptography/images/aes_structure.jpg)
+
+Each round consists of 4 sub-processes as shown below:
+
+![aes_image_2](https://www.tutorialspoint.com/cryptography/images/first_round_process.jpg)
+
+I will not go too closely into AES, I hope that readers here have a little understanding of this algorithm.
+
+After that,I used it to encrypt the data exchanged on the communication channel.
 
 ### **Signing with ECDSA**
 
-
+continue...
 
 ### **Sources**
 
