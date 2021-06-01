@@ -248,10 +248,13 @@ def scalar_multiplication(Q, n):
 
 ### **Elliptic-Curve Diffie-Hellman**
 
-As described on [wikipeida](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) Elliptic-Curve Diffie-Hellman (ECDH) is a key agreement protocol that allows **two parties**, each having an **elliptic-curve** public-private key pair, to establish a shared **secret** over an **insecure channel**. This shared secret may be directly used as a key, or to derive another key. The key, or the derived key, can then be used to encrypt subsequent communications using **symmetric-key cipher**. It is a variant of the **Diffie-Hellman protocol** using **elliptic-curve cryptography**.  
+As described on [wikipeida](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) Elliptic-Curve Diffie-Hellman (ECDH) is a key agreement protocol that allows **two parties**, each having an **elliptic-curve** public-private key pair, to establish a shared **secret** over an **insecure channel**. This shared secret may be directly used as a key, or to derive another key.   
 
 
-ECDH is very similar to the classical Diffie-Hellman Key Exchange (DHKE) algorithm, but it uses ECC point multiplication instead of modular exponentiations.  ECDH is based on the following property of EC point: 
+The key, or the derived key, can then be used to encrypt subsequent communications using **symmetric-key cipher**. It is a variant of the **Diffie-Hellman protocol** using **elliptic-curve cryptography**.   
+
+
+ECDH is very similar to the classical Diffie-Hellman Key Exchange (DHKE) algorithm, but it uses ECC point multiplication instead of modular exponentiations.  ECDH is based on the following property of EC point:   
 
 
 $$
