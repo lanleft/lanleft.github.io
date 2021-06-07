@@ -16,7 +16,7 @@ Today, *Elliptic Curve Cryptography* (**ECC**) appears in [TSL](https://tools.ie
 
 ## **The Goal**
 
-I code my application in C language, but in the blog I will explain ECC in Python language to skip bignum part.
+(I code my application in C language, but in the blog I will explain ECC in Python language to skip bignum part.)
 
 I explain how I apply ECC algorithm on secure transmission channel from server to client. I used *Elliptic Curve Diffie-Hellman* (**ECDH**) key exchange to generate keys for *Advanced Encryption Standard* (**AES**). That key used to encrypt the data exchanged between the client and the server.
 
