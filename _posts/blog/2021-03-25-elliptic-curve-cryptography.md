@@ -310,11 +310,6 @@ After that,I used it to encrypt the data exchanged on the communication channel.
 continue...  
 
 
-### **Sources**
-
-
-[Echo Server](https://github.com/lanleft/Project-II)
-
 
 
 
